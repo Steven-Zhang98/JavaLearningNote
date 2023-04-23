@@ -3,7 +3,7 @@
 Class note1 how to 
 ## Object oriented
 how to object
-```
+``` java
 public class Student {
    String name;
    int age;
