@@ -12,7 +12,13 @@ I
 * [advanced oo](#advanced-oo)
 
 ## If loop fuction
-Class note1 how to 
+### 问题引入
+
+### 代码的定义
+
+### 与原来知识点联系起来
+
+### 注意事项
 
 ## Oo and class 
 ### Object oriented
