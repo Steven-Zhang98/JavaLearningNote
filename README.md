@@ -3,7 +3,7 @@ This is a note documenting my learning progress.my instructor,[Mr.Zhang](https:/
 I 
 ## Contents
 > The presence of a ✅ indicates that I have completed the subject, while the absence of a ✅ means i have not finished it.
-* [if loop fuction](#if-loop-fuction) 
+* [If loop fuction](#if-loop-fuction) 
 * [oo and class](#oo-and-class)
 * [memory stack vs heap](#memory-stack-vs-heap)
 * [basic data structure vector vs list](#basic-data-structure-vector-vs-list)
@@ -12,12 +12,33 @@ I
 * [advanced oo](#advanced-oo)
 
 ## If loop fuction
-### 问题引入
+> 需求: 朋友聚会的时候可能会玩一个游戏:逢七过。
+规则是:从任意一个数字开始报数,当你要报的数字包含7或者是7的倍数时都要说:过。
+为了帮助大家更好的玩这个游戏,这里我们直接在控制台打印出1-100之间的满足逢七必过规则的数据。
 
-### 代码的定义
+Example:
 
-### 与原来知识点联系起来
+``` 
+Input: 1,2,3,4,5,6,7,8,9,10....
+Output: 1,2,3,4,5,6,"过",8,9,10.....
+```
 
+## 解题思路
+循环1——100之间的数字，并判断该输入是否是7或者7的倍数，如果是则打印“过”，如果不是则打印该数字
+
+## 代码示例
+``` java
+public static void feng7Guo() {
+        for (int i = 0; i < 101; i++) {
+            if (i % 10 == 7 || i / 7 == 0){
+                System.out.println("过!");
+            }
+            else {
+                System.out.println(i);
+            }
+        }
+    }
+``` 
 ### 注意事项
 
 ## Oo and class 
