@@ -11,10 +11,10 @@ I
 * [hash table](#hash-table)
 * [advanced oo](#advanced-oo)
 
-## if loop fuction
+## If loop fuction
 Class note1 how to 
 
-## oo and class 
+## Oo and class 
 ### Object oriented
 how to object
 ``` java
@@ -35,8 +35,8 @@ public class Student {
     }
 }
 ```
-## memory stack vs heap
-## basic data structure vector vs list
-## binary tree
-## hash table
-## advanced oo
+## Memory stack vs heap
+## Basic data structure vector vs list
+## Binary tree
+## Hash table
+## Advanced oo
