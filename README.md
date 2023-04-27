@@ -1,4 +1,5 @@
 # JavaLearningNote
+This is a note documenting my learning progress.my teacher,[Mr.Zhang](https://github.com/mincongzhang)
 ## Class
 Class note1 how to 
 ## Object oriented
