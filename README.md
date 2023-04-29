@@ -44,15 +44,16 @@ public static void feng7Guo() {
 ## Oo and class 
 ### Object oriented
 ``` java
-public class Dog {
+public class animal {
     private String m_name;
     private int[] m_position;
 
-    public Dog(String name,int[] position){
+    public animal(String name,int[] position){
         this.m_name = name;
         this.m_position = position;
         System.out.println(this.m_name + "born at position(" + this.m_position[0] + "," + this.m_position[1] +")");
     }
+
 
     public void  walk(int[] newPosition){
         System.out.println(this.m_name + "moved from(" + this.m_position[0] + "," + this.m_position[1] +
