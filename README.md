@@ -31,7 +31,7 @@ Output: 1,2,3,4,5,6,"pass",8,9,10.....
 public static void feng7Guo() {
         for (int i = 0; i < 101; i++) {
             if (i % 10 == 7 || i / 7 == 0){
-                System.out.println("过!");
+                System.out.println("pass!");
             }
             else {
                 System.out.println(i);
