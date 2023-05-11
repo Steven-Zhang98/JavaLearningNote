@@ -47,3 +47,13 @@
     }
 }
 ``` 
+接下来模拟压栈弹栈的过程
+``` java
+Stack stack = new Stack(3);  // 创建一个容量为 3 的栈
+stack.push(1);  // 将 1 压入栈
+stack.push(2);  // 将 2 压入
+int poppedValue = stack.pop();  // 弹出并获取栈顶元素
+System.out.println("Popped value: " + poppedValue);  // 输出弹出的元素
+```
+
+## 堆leap
