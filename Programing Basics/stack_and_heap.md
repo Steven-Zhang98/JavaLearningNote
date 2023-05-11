@@ -56,4 +56,4 @@ int poppedValue = stack.pop();  // 弹出并获取栈顶元素
 System.out.println("Popped value: " + poppedValue);  // 输出弹出的元素
 ```
 
-## 堆leap
+## 堆heap
