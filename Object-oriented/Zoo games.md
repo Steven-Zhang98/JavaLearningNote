@@ -3,8 +3,8 @@
 类是对现实世界中事物的抽象表示，它描述了这些事物共有的属性和功能。在java中，类定义了数据成员（变量）和成员函数（方法），用于表示和操作对象的状态和行为。比如现实情况中，我们会把狗这一类动物抽象出它的属性（颜色、品种、高度、长度）还会觉得狗有一定的动作（叫、跑、摇尾巴）
 而在计算机中我们可以创建一只电子狗，假设我们有一个名为 "dog" 的类。dog 类可以包含属性（如 position、name）以及方法（如 walk、brake 和 honk）。
 ``` java
-public class dog {
-// 狗的属性
+public class Dog {
+// Dog properties
     private String m_name;
     private int[] m_position;
     
@@ -13,7 +13,7 @@ public class dog {
         this.m_position = position;
         System.out.println(this.m_name + "born at position(" + this.m_position[0] + "," + this.m_position[1] +")");
     }
-    // 狗的可以走（功能）
+    // Dog's can go (function)
      public void  walk(int[] newPosition){
         System.out.println(this.m_name + "moved from(" + this.m_position[0] + "," + this.m_position[1] +
                 ")to("+ newPosition[0] + "," + newPosition[1] + ")");
@@ -39,7 +39,7 @@ public static void main(String[] args) {
     private String m_name;
     private int[] m_position;
 
-    public animal(String name,int[] position){
+    public Animal(String name,int[] position){
         this.m_name = name;
         this.m_position = position;
         System.out.println(this.m_name + "born at position(" + this.m_position[0] + "," + this.m_position[1] +")");
@@ -67,7 +67,7 @@ public static void main(String[] args) {
     }
     
     
- public class Cat extends animal {
+ public class Cat extends Animal {
  public Cat(String name, int[] position) {
         super(name, position);
         System.out.println(name + " is a cat, and it was born at position(" + position[0] + "," + position[1] + ")");
