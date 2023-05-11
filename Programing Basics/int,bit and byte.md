@@ -17,7 +17,7 @@ bit（字节）是binary digit的缩写。计算机中存储和处理数据的�
 ### ASCII码表
 
 ```java
-public class ByteAsciiExameple{
+public class ByteAscii{
 	pblic class void main{String[] args}{
 	byte asciiByte = (byte)'A';
 	System.out.println("The byte value of 'A':"+ asciiByte);
