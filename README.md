@@ -39,72 +39,8 @@ public static void feng7Guo() {
         }
     }
 ``` 
-### 注意事项
-
-## Oo and class 
-### Object oriented
-``` java
-public class animal {
-    private String m_name;
-    private int[] m_position;
-
-    public animal(String name,int[] position){
-        this.m_name = name;
-        this.m_position = position;
-        System.out.println(this.m_name + "born at position(" + this.m_position[0] + "," + this.m_position[1] +")");
-    }
-
-
-    public void  walk(int[] newPosition){
-        System.out.println(this.m_name + "moved from(" + this.m_position[0] + "," + this.m_position[1] +
-                ")to("+ newPosition[0] + "," + newPosition[1] + ")");
-        this.m_position = newPosition;
-    }
-
-    public static void main(String[] args) {
-        Dog d1 = new Dog("dog1",new int[]{1,1});
-        Dog d2 = new Dog("dog2",new int[]{1,2});
-        d1.walk(new int[]{3,4});
-        d2.walk(new int[]{3,6});
-
-        System.out.println("===========more dogs coming===========");
-        Dog d4 = new Dog("dog1",new int[]{1,6});
-        Dog d5 = new Dog("dog1",new int[]{98,04});
-        Dog d6 = new Dog("dog1",new int[]{25,8});
-    }
-}
 ```
-### 继承
-``` java
-public class Cat extends Dog {
 
-    public Cat(String name, int[] position) {
-        super(name, position);
-        System.out.println(name + " is a cat, and it was born at position(" + position[0] + "," + position[1] + ")");
-    }
-
-    public void meow() {
-        System.out.println(getName() + " says: Meow!");
-    }
-
-    public static void main(String[] args) {
-        Cat c1 = new Cat("cat1", new int[]{2, 2});
-        Cat c2 = new Cat("cat2", new int[]{2, 3});
-
-        c1.walk(new int[]{4, 5});
-        c2.walk(new int[]{4, 7});
-
-        c1.meow();
-        c2.meow();
-
-        System.out.println("===========more cats coming===========");
-        Cat c4 = new Cat("cat3", new int[]{1, 7});
-        Cat c5 = new Cat("cat4", new int[]{97, 5});
-        Cat c6 = new Cat("cat5", new int[]{26, 9});
-    }
-}
-
-```
 ## Memory stack vs heap
 ## Basic data structure vector vs list
 ## Binary tree
