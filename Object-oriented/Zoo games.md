@@ -8,7 +8,7 @@ public class Dog {
     private String m_name;
     private int[] m_position;
     
-    public dog(String name,int[] position){
+    public Dog(String name,int[] position){
         this.m_name = name;
         this.m_position = position;
         System.out.println(this.m_name + "born at position(" + this.m_position[0] + "," + this.m_position[1] +")");
