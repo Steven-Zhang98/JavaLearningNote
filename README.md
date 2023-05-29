@@ -24,21 +24,22 @@ Output: 1,2,3,4,5,6,"pass",8,9,10.....
 ```
 
 ## 解题思路
-循环1——100之间的数字，并判断该输入是否是7或者7的倍数，如果是则打印“过”，如果不是则打印该数字
+循环1——100之间的数字，在这段代码中，i % 10 == 7检查数字的个位是否为7，i / 10 == 7检查数字的十位是否为7，i % 7 == 0检查数字是否是7的倍数。这段代码可以正确处理1到100之间的数字。
 
 ## 代码示例
 ``` java
-public static void feng7Guo() {
-        for (int i = 0; i < 101; i++) {
-            if (i % 10 == 7 || i / 7 == 0){
-                System.out.println("pass!");
-            }
-            else {
+public class Main {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 100; i++) {
+            if (i % 10 == 7 || i / 10 == 7 || i % 7 == 0) {
+                System.out.println("过");
+            } else {
                 System.out.println(i);
             }
         }
     }
-``` 
+}
+
 ```
 
 ## Memory stack vs heap
