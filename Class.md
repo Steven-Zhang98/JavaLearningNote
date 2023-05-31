@@ -1,3 +1,4 @@
+``` java
 public class Animal {
     // 属性
     private String name;
@@ -35,4 +36,4 @@ public class Animal {
         System.out.println(this.name + " is sleeping.");
     }
 }
-
+```
