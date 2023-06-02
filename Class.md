@@ -37,3 +37,32 @@ public class Animal {
     }
 }
 ```
+继承
+``` java
+public class Dog extends Animal {
+    // 新增属性
+    private String color;
+
+    // 构造方法
+    public Dog(String name, String type, String color) {
+        super(name, type);
+        this.color = color;
+    }
+
+    // get和set方法
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    // 狗叫
+    public void bark() {
+        System.out.println(getName() + " is barking.");
+    }
+}
+
+
+```
