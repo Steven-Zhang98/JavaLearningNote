@@ -66,3 +66,59 @@ public class Dog extends Animal {
 
 
 ```
+猫类
+``` java
+public class Cat extends Animal {
+    // 新增属性
+    private String furColor;
+
+    // 构造方法
+    public Cat(String name, String type, String furColor) {
+        super(name, type);
+        this.furColor = furColor;
+    }
+
+    // get和set方法
+    public String getFurColor() {
+        return furColor;
+    }
+
+    public void setFurColor(String furColor) {
+        this.furColor = furColor;
+    }
+
+    // 猫抓老鼠
+    public void catchMouse() {
+        System.out.println(getName() + " is catching a mouse.");
+    }
+}
+
+```
+鸟类
+``` java
+public class Bird extends Animal {
+    // 新增属性
+    private double wingSpan;
+
+    // 构造方法
+    public Bird(String name, String type, double wingSpan) {
+        super(name, type);
+        this.wingSpan = wingSpan;
+    }
+
+    // get和set方法
+    public double getWingSpan() {
+        return wingSpan;
+    }
+
+    public void setWingSpan(double wingSpan) {
+        this.wingSpan = wingSpan;
+    }
+
+    // 鸟飞翔
+    public void fly() {
+        System.out.println(getName() + " is flying.");
+    }
+}
+
+```
