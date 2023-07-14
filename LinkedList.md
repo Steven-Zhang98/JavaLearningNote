@@ -1,3 +1,4 @@
+```java
 class Node {
     private int m_val;
     private Node m_next;
@@ -52,3 +53,4 @@ class LinkedList {
         System.out.println();
     }
 }
+```
