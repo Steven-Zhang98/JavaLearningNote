@@ -1,0 +1,54 @@
+class Node {
+    private int m_val;
+    private Node m_next;
+    public Node(int val) {
+        m_val = val;
+    }
+
+    public int getVal() {
+        return m_val;
+    }
+
+    public void setNext(Node n) {
+        m_next = n;
+    }
+
+    public Node getNext() {
+        return m_next;
+    }
+
+}
+
+class LinkedList {
+    private Node head;
+
+    public LinkedList(int val) {
+        head = new Node(val);
+    }
+    
+    public void insert(int val) {
+        Node newNode = new Node(val);
+        newNode.setNext(head);
+        head = newNode;
+    }
+    
+    public boolean exist(int val) {
+        Node current = head;
+        while (current != null) {
+            if (current.getVal() == val) {
+                return true;
+            }
+            current = current.getNext();
+        }
+        return false;
+    }
+    
+    public void print() {
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.getVal() + " ");
+            current = current.getNext();
+        }
+        System.out.println();
+    }
+}
