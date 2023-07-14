@@ -53,4 +53,16 @@ class LinkedList {
         System.out.println();
     }
 }
+public class Main {
+    public static void main(String[] args) {
+        LinkedList list = new LinkedList(5);
+        list.insert(4);
+        list.insert(3);
+        list.insert(6);
+        System.out.println("6 is in linked list:" + list.exist(6));
+        System.out.println("16 is not in linked list:" + list.exist(16));
+        list.print();
+        System.out.println("done");
+    }
+}
 ```
