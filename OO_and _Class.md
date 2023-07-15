@@ -98,4 +98,24 @@ public class Bird extends Animal {
 }
 
 ```
-测试功能
+#### 测试
+测试出了问题，明天继续改进
+``` java
+public class Main {
+    public static void main(String[] args) {
+        // 创建一个猫对象
+        Cat cat = new Cat("cat1", "cat2", "ca3");
+        // 使用猫对象的方法
+        cat.eat();
+        cat.sleep();
+        cat.catchMouse();
+
+        // 创建一个鸟对象
+        Bird bird = new Bird("Tweety", "Canary", 5.0);
+        // 使用鸟对象的方法
+        bird.eat();
+        bird.sleep();
+        bird.fly();
+    }
+}
+``` java
