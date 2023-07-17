@@ -53,43 +53,6 @@ class Position {
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
-    public static void main(String[] args) {
-        Dog d1 = new Dog("dog1", new Position(1, 1));
-        Dog d2 = new Dog("dog2", new Position(1, 2));
-        d1.walk(new Position(3, 4));
-        d2.walk(new Position(1, 3));
-
-        System.out.println("=====more dogs coming=====");
-
-        Dog d3 = new Dog("dog3", new Position(1, 1));
-        Dog d4 = new Dog("dog4", new Position(1, 1));
-        List<Dog> animalList = new ArrayList<>();
-        animalList.add(d1);
-        animalList.add(d2);
-        animalList.add(d3);
-        animalList.add(d4);
-
-        for (Dog dog : animalList) {
-            dog.walk(new Position(10, 10));
-        }
-    }
-}
-
-class Position {
-    int x, y;
-
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + x + "," + y + ")";
-    }
-}
-
 class Dog {
     private String name;
     private Position position;
@@ -110,29 +73,6 @@ class Dog {
 ### 想创建一只会飞的猫
 这段Java代码中，我们创建了一个新的Cat类，这个类和Dog类非常相似，有两个私有成员变量name和position，以及一个构造函数和一个walk方法。Position类则和之前的完全一样，用于表示位置。在main方法中，我们创建了两个Cat对象，并调用了它们的walk方法以改变它们的位置。
 ``` java
-public class Main {
-    public static void main(String[] args) {
-        Cat c1 = new Cat("cat1", new Position(1,1));
-        Cat c2 = new Cat("cat2", new Position(1,2));
-        c1.walk(new Position(3,4));
-        c2.walk(new Position(1,3));
-    }
-}
-
-class Position {
-    int x, y;
-
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + x + "," + y + ")";
-    }
-}
-
 class Cat {
     private String name;
     private Position position;
@@ -157,36 +97,6 @@ class Cat {
 ``` java
 import java.util.ArrayList;
 import java.util.List;
-
-public class Main {
-    public static void main(String[] args) {
-        List<Animal> animalList = new ArrayList<>();
-        animalList.add(new Dog("dog1", new Position(1, 1)));
-        animalList.add(new Cat("cat1", new Position(2, 2)));
-
-        for (Animal animal : animalList) {
-            animal.walk(new Position(10, 10));
-        }
-
-        for (Animal animal : animalList) {
-            animal.swim(new Position(20, 20));
-        }
-    }
-}
-
-class Position {
-    int x, y;
-
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    @Override
-    public String toString() {
-        return "(" + x + "," + y + ")";
-    }
-}
 
 abstract class Animal {
     protected String name;
@@ -226,4 +136,31 @@ class Cat extends Animal {
     }
 }
 
+```
+### Is-a 和 has-a 区别
+这段Java代码中，我们创建了一个新的Human类，该类有三个私有成员变量：name、position和pets。pets是一个Animal对象的列表，表示人拥有的宠物。在Human的构造函数中，我们初始化了这些成员变量，并且打印出每个被收养的动物的名字。Human类也有一个walk方法，该方法不仅改变人的位置，还改变所有宠物的位置。在main方法中，我们创建了一个Cat对象、一个Dog对象和一个Human对象，并调用了Human对象的walk方法以改变所有生物的位置。
+``` java
+class Human {
+    private String name;
+    private Position position;
+    private List<Animal> pets;
+
+    public Human(String name, Position position, List<Animal> animals) {
+        this.name = name;
+        this.position = position;
+        this.pets = animals;
+
+        for (Animal animal : pets) {
+            System.out.println(this.name + " is adopting a pet " + animal.getName());
+        }
+    }
+
+    public void walk(Position newPosition) {
+        System.out.println(this.name + " moved from " + this.position + " to " + newPosition);
+        this.position = newPosition;
+
+        for (Animal pet : pets) {
+            pet.walk(newPosition);
+        }
+    }
 ```
