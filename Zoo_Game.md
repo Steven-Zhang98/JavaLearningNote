@@ -1,3 +1,5 @@
+### 创建一只狗
+请注意，与Python不同，Java没有内置的元组支持，所以这里使用数组来表示位置。如果你计划在代码中大量使用这样的两元素组合，你可以考虑使用一个两元素类，或者使用库提供的对或元组类。
 ``` java
 public class Main {
     public static void main(String[] args) {
@@ -10,7 +12,10 @@ public class Main {
     }
 } 
 ```
-优化
+### 进一步优化
+在Java中，你可以创建一个自定义的类来存储两个元素。以下是一个示例，它创建了一个名为Position的类，用于存储狗的位置信息，在这个例子中，我们创建了一个新的Position类，它有两个成员变量x和y，分别代表位置的两个维度。我们也提供了一个构造函数来初始化这些值，以及一个toString()方法来创建一个表示此对象的字符串。
+
+然后，我们在main函数中使用这个Position类来创建和操作狗的位置。这样的话，你的代码就更容易阅读和理解，同时也可以方便地扩展来处理更复杂的位置信息，比如三维空间的位置。
 ``` java
 public class Main {
     public static void main(String[] args) {
@@ -37,4 +42,188 @@ class Position {
         return "(" + x + "," + y + ")";
     }
 }
-``` 
+```
+
+### 创建狗类
+假如我们要创建2只, 再进一步创建10只, 怎么办呢?  
+在这个Java代码中，我们创建了一个Dog类和一个Position类。Dog类有两个成员变量name和position，并且包含一个构造函数和一个名为walk的方法，用于改变狗的位置。
+
+在main函数中，我们创建了几个Dog对象，并使用walk方法移动这些对象。然后，我们将这些Dog对象添加到一个ArrayList中，并遍历该列表，移动列表中的每个狗。
+``` java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        Dog d1 = new Dog("dog1", new Position(1, 1));
+        Dog d2 = new Dog("dog2", new Position(1, 2));
+        d1.walk(new Position(3, 4));
+        d2.walk(new Position(1, 3));
+
+        System.out.println("=====more dogs coming=====");
+
+        Dog d3 = new Dog("dog3", new Position(1, 1));
+        Dog d4 = new Dog("dog4", new Position(1, 1));
+        List<Dog> animalList = new ArrayList<>();
+        animalList.add(d1);
+        animalList.add(d2);
+        animalList.add(d3);
+        animalList.add(d4);
+
+        for (Dog dog : animalList) {
+            dog.walk(new Position(10, 10));
+        }
+    }
+}
+
+class Position {
+    int x, y;
+
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}
+
+class Dog {
+    private String name;
+    private Position position;
+
+    public Dog(String name, Position position) {
+        this.name = name;
+        this.position = position;
+        System.out.println(this.name + " born at position " + this.position);
+    }
+
+    public void walk(Position newPosition) {
+        System.out.println(this.name + " moved from " + this.position + " to " + newPosition);
+        this.position = newPosition;
+    }
+}
+
+```
+### 想创建一只会飞的猫
+这段Java代码中，我们创建了一个新的Cat类，这个类和Dog类非常相似，有两个私有成员变量name和position，以及一个构造函数和一个walk方法。Position类则和之前的完全一样，用于表示位置。在main方法中，我们创建了两个Cat对象，并调用了它们的walk方法以改变它们的位置。
+``` java
+public class Main {
+    public static void main(String[] args) {
+        Cat c1 = new Cat("cat1", new Position(1,1));
+        Cat c2 = new Cat("cat2", new Position(1,2));
+        c1.walk(new Position(3,4));
+        c2.walk(new Position(1,3));
+    }
+}
+
+class Position {
+    int x, y;
+
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}
+
+class Cat {
+    private String name;
+    private Position position;
+
+    public Cat(String name, Position position) {
+        this.name = name;
+        this.position = position;
+        System.out.println(this.name + " born at position " + this.position);
+    }
+
+    public void walk(Position newPosition) {
+        System.out.println(this.name + " moved from " + this.position + " to " + newPosition);
+        this.position = newPosition;
+    }
+}
+
+```
+### 抽象 Animal 类
+在这段Java代码中，我们创建了一个Animal抽象类，并定义了name、position成员变量，以及walk、swim方法。然后，我们创建了两个继承自Animal类的类：Dog和Cat。Dog类直接继承了Animal类的所有属性和行为，而Cat类覆盖了swim方法以表达猫不能游泳的事实。
+
+在main方法中，我们创建了一个Animal对象的列表，并向其添加了一只Dog和一只Cat。然后，我们遍历这个列表，并让列表中的每个动物走路和游泳。
+``` java
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Animal> animalList = new ArrayList<>();
+        animalList.add(new Dog("dog1", new Position(1, 1)));
+        animalList.add(new Cat("cat1", new Position(2, 2)));
+
+        for (Animal animal : animalList) {
+            animal.walk(new Position(10, 10));
+        }
+
+        for (Animal animal : animalList) {
+            animal.swim(new Position(20, 20));
+        }
+    }
+}
+
+class Position {
+    int x, y;
+
+    public Position(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
+    }
+}
+
+abstract class Animal {
+    protected String name;
+    protected Position position;
+
+    public Animal(String name, Position position) {
+        this.name = name;
+        this.position = position;
+        System.out.println(this.name + " born at position " + this.position);
+    }
+
+    public void walk(Position newPosition) {
+        System.out.println(this.name + " moved from " + this.position + " to " + newPosition);
+        this.position = newPosition;
+    }
+
+    public void swim(Position newPosition) {
+        System.out.println(this.name + " swim from " + this.position + " to " + newPosition);
+        this.position = newPosition;
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name, Position position) {
+        super(name, position);
+    }
+}
+
+class Cat extends Animal {
+    public Cat(String name, Position position) {
+        super(name, position);
+    }
+
+    @Override
+    public void swim(Position newPosition) {
+        System.out.println(this.name + " is a cat and cannot swim!");
+    }
+}
+
+```
