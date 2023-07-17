@@ -10,6 +10,8 @@ public class Main {
     }
 } 
 ```
+优化
+``` java
 public class Main {
     public static void main(String[] args) {
         String dogName = "dog1";
@@ -20,8 +22,6 @@ public class Main {
         System.out.println(dogName + " 从 " + dogPosition + " 移动到位置 " + newPosition);
     }
 }
-优化
-``` java
 class Position {
     int x, y;
 
@@ -37,4 +37,4 @@ class Position {
         return "(" + x + "," + y + ")";
     }
 }
-``` java
+``` 
