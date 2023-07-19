@@ -52,7 +52,28 @@ class Position {
 ``` java
 import java.util.ArrayList;
 import java.util.List;
+public class Main {
+    public static void main(String[] args) {
+        Dog d1 = new Dog("dog1", new Position(1, 1));
+        Dog d2 = new Dog("dog2", new Position(1, 2));
+        d1.walk(new Position(3, 4));
+        d2.walk(new Position(1, 3));
 
+        System.out.println("=====more dogs coming=====");
+
+        Dog d3 = new Dog("dog3", new Position(1, 1));
+        Dog d4 = new Dog("dog4", new Position(1, 1));
+        List<Dog> animalList = new ArrayList<>();
+        animalList.add(d1);
+        animalList.add(d2);
+        animalList.add(d3);
+        animalList.add(d4);
+
+        for (Dog dog : animalList) {
+            dog.walk(new Position(10, 10));
+        }
+    }
+}
 class Dog {
     private String name;
     private Position position;
