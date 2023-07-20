@@ -107,3 +107,24 @@ public class BinarySearchTree {
 ![image](https://github.com/Steven-Zhang98/JavaLearningNote/assets/115378528/6acec8fb-9f5d-4295-945f-e9e05745674e)
 
 最终结果会打印出124356
+### 实现二叉搜索树插入功能的有趣代码
+``` java
+private void insert(Node node, int value) {
+    Node nextNode = null;
+    if (node.getValue() > value) {
+        if (node.getLeft() == null) {
+            node.setLeft(new Node(value));
+            return;
+        }
+        nextNode = node.getLeft();
+    } else if (node.getValue() < value) {
+        if (node.getRight() == null) {
+            node.setRight(new Node(value));
+            return;
+        }
+        nextNode = node.getRight();
+    }
+    insert(nextNode, value);
+}
+```
+这个代码跟实现逻辑仍然是先比较插入值与根节点的值，但是当进一步判断该节点的左子树或右子树是否存在时，这个实现方法只考虑不存在的情况，并将该节点存在左子树或右子树的情况，通过创建 “nextNode” 这样一个节点，将两种情况统一成一种情况，在代码的最后进行 insert(nextNode, value); 可谓是非常精彩。
