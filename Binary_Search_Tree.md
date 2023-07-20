@@ -53,43 +53,56 @@ public class Node {
 public class BinarySearchTree {
     private Node root;
 
-    public BinarySearchTree() {
-        this.root = null;
+    public BinarySearchTree(int value) {
+        root = new Node(value);
     }
 
     public void insert(int value) {
-        this.root = this.insertRec(this.root, value);
+        insert(root, value);
     }
 
-    private Node insert(Node root, int value) {
-        if (root == null) {
-            root = new Node(value);
-            return root;
+    private void insert(Node node, int value) {
+        if (value > node.getValue()) {
+            Node right = node.getRight();
+            if (right == null) {
+                node.setRight(new Node(value));
+            } else {
+                insert(right, value);
+            }
+        } else if (value < node.getValue()) {   // Avoid duplicates
+            Node left = node.getLeft();
+            if (left == null) {
+                node.setLeft(new Node(value));
+            } else {
+                insert(left, value);
+            }
         }
+    }
 
-        if (value < root.getValue()) {
-            root.setLeft(this.insertRec(root.getLeft(), value));
-        } else if (value > root.getValue()) {
-            root.setRight(this.insertRec(root.getRight(), value));
+    public void visit() {
+        preOrderVisit(root);
+    }
+
+    private void preOrderVisit(Node node) {
+        if (node == null) {
+            return;
         }
+        System.out.println(node.getValue());
+        preOrderVisit(node.getLeft());
+        preOrderVisit(node.getRight());
+    }
 
-        return root;
+    public static void main(String[] args) {
+        BinarySearchTree tree = new BinarySearchTree(5);
+        tree.insert(4);
+        tree.insert(6);
+        tree.insert(7);
+        tree.insert(3);
+        tree.insert(1);
+        tree.visit();
     }
 }
-```
-然后，我们需要对二叉树进行遍历，常见的遍历方式有先序遍历、中序遍历和后序遍历。这里我们添加一个中序遍历的方法，即先打印该节点值，在遍历左子树，然后是右子树。
-``` java
-public void visit() {
-        this.visitRec(this.root);
-    }
 
-    private void visitRec(Node node) {
-        if (node != null) {
-            System.out.println(node.getValue());
-            visitRec(node.getLeft());
-            visitRec(node.getRight());
-        }
-    }
 ```
 ![image](https://github.com/Steven-Zhang98/JavaLearningNote/assets/115378528/6acec8fb-9f5d-4295-945f-e9e05745674e)
 
