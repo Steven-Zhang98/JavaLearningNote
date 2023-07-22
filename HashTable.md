@@ -7,21 +7,35 @@
 什么是键值对？  
 用于表示两个数据元素之间的关系。键值对由两部分组成：键（Key）和值（Value）。例如，如果你有一个电话簿，你可能会将人的名字作为键，将他们的电话号码作为值。这样，当你需要查找某人的电话号码时，你可以使用他们的名字（键）来快速找到电话号码（值）。
 ```java
-public class Entry {
-    int key;
-    String value;
-    Entry next;
-
-    public Entry(int key, String value) {
-        this.key = key;
-        this.value = value;
-        this.next = null;
+class HashMap
+{
+    private int [] m_hash_vals;
+    private int m_hash_seed;
+    
+    public HashMap(int size)
+    {
+        m_hash_seed = size+1;
+        System.out.println("hash seed should be a prime number:"+m_hash_seed);
+        m_hash_vals = new int[m_hash_seed];
+    }
+    
+    private int get_hash(int key)
+    {
+        return key%m_hash_seed;
+    }
+    
+    public void insert(int key, int val)
+    {
+        int index = get_hash(key);
+        m_hash_vals[index] = val;
+    }
+    
+    public int get(int key)
+    {
+        int index = get_hash(key);
+        return m_hash_vals[index];
     }
 }
 
 ```
-问题 1：为什么要设计一个 next？
 
-#### 2. 如何设计一个 hash map？
-问题 2：当插入进去的位置已经有数据存在该怎么办?
-问题 3：如何理解 next？
