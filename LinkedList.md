@@ -1,6 +1,8 @@
-
 ### 内存示意图 --> mentor https://github.com/mincongzhang/MentoringMaterial/blob/main/BASICS/BASICS_5_basic_data_structure_vector_vs_list.md
+### 为什么要用 LinkedList 而不是 array 数组？
+节省连续内存空间，一个 LinkedList 要占两个内存空间
 ### 什么是 LinkedList？为什么要用这个东西？
+  
 ### 如何搭建一个基础的单链表数据结构？
 先搭建一个Node 类：表示链表中的一个节点（node）。每个节点有一个整数值 m_val 和一个指向下一个节点的引用 m_next。它还提供了几个方法来设置和获取这些值。  
 LinkedList 类：这个类表示一个单链表。它有一个头节点 （head）。它还定义了一些操作链表的方法：
