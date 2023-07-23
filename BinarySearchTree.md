@@ -1,4 +1,12 @@
-## 如何写一个二叉搜索树（Binary Search Tree，简称 BST）？
+### 什么是二叉树？
+### 二叉树解决什么问题？为什么要使用？
+存储，
+优化搜索，分治思想
+排序-->https://github.com/mincongzhang/MentoringMaterial/blob/main/BASICS/BASICS_6_from_linked_list_to_binary_tree.md
+### 图像
+### left right 怎么变成二叉搜索树？
+
+### 如何写一个二叉搜索树（Binary Search Tree，简称 BST）？
 这玩意干嘛的? 有什么用? 能解决什么问题？
 ### 1.写一个 Node
 为什么要先定义 node 类才定义二叉搜索树？因为每个节点都有一些共享的特性，比如一个值和指向其他节点的指针（通常是左右子节点）。这些特性可以很好地用一个类来表示。  
@@ -125,7 +133,15 @@ private void insert(Node node, int value) {
         }
         nextNode = node.getRight();
     }
+
     insert(nextNode, value);
 }
 ```
 这个代码跟实现逻辑仍然是先比较插入值与根节点的值，但是当进一步判断该节点的左子树或右子树是否存在时，这个实现方法只考虑不存在的情况，并将该节点存在左子树或右子树的情况，通过创建 “nextNode” 这样一个节点，将两种情况统一成一种情况，在代码的最后进行 insert(nextNode, value); 可谓是非常精彩。
+
+### 退化成链表
+-->https://github.com/mincongzhang/MentoringMaterial/blob/main/BASICS/BASICS_8_binary_search_tree_rebalancing.md
+### 如何解决
+rebalance
+
+### avl 树，红黑树
